@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1398032972014910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.68, y: -0.05, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 3.125, y: 3.125, z: 3.125}
   m_Children:
   - {fileID: 4481336694637824}
   m_Father: {fileID: 0}
@@ -156,7 +156,6 @@ MonoBehaviour:
   - {fileID: 21300012, guid: 6fb7b535e3afe4a4690144c0784dcb2e, type: 3}
   BulletPrefab: {fileID: 1522390436916520, guid: 3a7819613f3263c48a62bb81cf5f82f6,
     type: 2}
-  Bullet: {fileID: 0}
   Boom: {fileID: 1366418860820286, guid: debc4f71695da4b40961d8a1070af2df, type: 2}
   DefendEffectPrefab: {fileID: 1374570320380436}
 --- !u!212 &212658209190531264
