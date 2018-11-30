@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
 	// 属性
 	public float moveSpeed=3;
 	private Vector3 BulletEulerAngles;
-	private Vector3 BulletEulerPosition=new Vector3(0,0.55f,0);
+	private Vector3 BulletEulerPosition=new Vector3(0,0.675f,0);
 	private float timeVal;
 	private float DefendTimeVal=4;//吃道具后无敌10秒
 	private bool isDefended=true;
@@ -62,7 +62,7 @@ public class Player : MonoBehaviour {
 		if(h<0){
 			sr.sprite=tankSprite[1];
 			BulletEulerAngles = new Vector3(0,0,90);
-			BulletEulerPosition = new Vector3(-0.55f,0,0);
+			BulletEulerPosition = new Vector3(-0.675f,0,0);
 			transform.Translate(Vector3.right*h*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			if(v!=0){
@@ -71,7 +71,7 @@ public class Player : MonoBehaviour {
 		}else if(h>0){
 			sr.sprite=tankSprite[3];
 			BulletEulerAngles = new Vector3(0,0,-90);
-			BulletEulerPosition = new Vector3(0.55f,0,0);
+			BulletEulerPosition = new Vector3(0.675f,0,0);
 			transform.Translate(Vector3.right*h*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			if(v!=0){
@@ -80,13 +80,13 @@ public class Player : MonoBehaviour {
 		}else if(v<0){
 			sr.sprite=tankSprite[2];
 			BulletEulerAngles = new Vector3(0,0,180);
-			BulletEulerPosition = new Vector3(0,-0.55f,0);
+			BulletEulerPosition = new Vector3(0,-0.675f,0);
 			transform.Translate(Vector3.up*v*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 		}else if(v>0){
 			sr.sprite=tankSprite[0];
 			BulletEulerAngles = new Vector3(0,0,0);
-			BulletEulerPosition = new Vector3(0,0.55f,0);
+			BulletEulerPosition = new Vector3(0,0.675f,0);
 			transform.Translate(Vector3.up*v*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 		}else if(h==0&&v==0){

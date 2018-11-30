@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
 	// 属性
 	public float moveSpeed=3;
 	protected Vector3 BulletEulerAngles;
+	private Vector3 BulletEulerPosition=new Vector3(0,0.675f,0);
 	// 引用
 	public GameObject BulletPrefab;
 	public Sprite[] tankSprite;
@@ -70,6 +71,7 @@ public class Enemy : MonoBehaviour {
 		if(h<0){
 			sr.sprite=TankSkin[1];
 			BulletEulerAngles = new Vector3(0,0,90);
+			BulletEulerPosition = new Vector3(-0.675f,0,0);
 			transform.Translate(Vector3.right*h*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			if(v!=0){
@@ -78,6 +80,7 @@ public class Enemy : MonoBehaviour {
 		}else if(h>0){
 			sr.sprite=TankSkin[3];
 			BulletEulerAngles = new Vector3(0,0,-90);
+			BulletEulerPosition = new Vector3(0.675f,0,0);
 			transform.Translate(Vector3.right*h*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY | RigidbodyConstraints2D.FreezeRotation;
 			if(v!=0){
@@ -86,11 +89,13 @@ public class Enemy : MonoBehaviour {
 		}else if(v<0){
 			sr.sprite=TankSkin[2];
 			BulletEulerAngles = new Vector3(0,0,180);
+			BulletEulerPosition = new Vector3(0,-0.675f,0);
 			transform.Translate(Vector3.up*v*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 		}else if(v>0){
 			sr.sprite=TankSkin[0];
 			BulletEulerAngles = new Vector3(0,0,0);
+			BulletEulerPosition = new Vector3(0,0.675f,0);
 			transform.Translate(Vector3.up*v*moveSpeed*Time.fixedDeltaTime,Space.World);
 			GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 		}else if(h==0&&v==0){
@@ -99,7 +104,7 @@ public class Enemy : MonoBehaviour {
 	}
 	// 坦克攻击
 	private void Attack(){
-		GameObject prefabInstance = Instantiate(BulletPrefab,transform.position,Quaternion.Euler(transform.eulerAngles+BulletEulerAngles));
+		GameObject prefabInstance = Instantiate(BulletPrefab,transform.position+BulletEulerPosition,Quaternion.Euler(transform.eulerAngles+BulletEulerAngles));
 		prefabInstance.transform.parent = GameObject.Find("Bullets").transform;
 	}
 	protected void Die(){

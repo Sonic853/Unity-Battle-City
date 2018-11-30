@@ -11,6 +11,7 @@ TagManager:
   - Barriar
   - Bullet
   - Player1Bullet
+  - Born
   layers:
   - Default
   - TransparentFX
