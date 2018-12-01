@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 156edf117960b9b40955ebbabaa99937
+guid: b02395ffb761eff40b3fb6bd9d66b33c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bullet_0
-    21300002: bullet_1
-    21300004: bullet_2
-    21300006: bullet_3
+    21300000: Bullet_0
+    21300002: Bullet_1
+    21300004: Bullet_2
+    21300006: Bullet_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -54,7 +54,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -106,22 +106,11 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bullet_0
+      name: Bullet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -129,19 +118,19 @@ TextureImporter:
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2256633c1e2e304abafb72df38d1ae6
+      spriteID: 5863bc5f8453a074ca2b5b05f418e7cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_1
+      name: Bullet_1
       rect:
         serializedVersion: 2
         x: 8
@@ -149,19 +138,19 @@ TextureImporter:
         width: 8
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3340b8e99332a30438f059d01b633647
+      spriteID: d9a6a54cfd3ec964a96c980f82c0f162
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_2
+      name: Bullet_2
       rect:
         serializedVersion: 2
         x: 17
@@ -169,19 +158,19 @@ TextureImporter:
         width: 7
         height: 8
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca7f2fc92ea34754ba9ca31e77cff7b3
+      spriteID: 597a49d58e718af4189e3ab3da7fd043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bullet_3
+      name: Bullet_3
       rect:
         serializedVersion: 2
         x: 24
@@ -189,13 +178,13 @@ TextureImporter:
         width: 8
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 613d100e448441f4d85f4d0a3f7d299b
+      spriteID: 2afbb921d9949d549a0ba58c280c1d3e
       vertices: []
       indices: 
       edges: []
@@ -203,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 57d1bd50241e7e54da7d05f379253efc
     vertices: []
     indices: 
     edges: []

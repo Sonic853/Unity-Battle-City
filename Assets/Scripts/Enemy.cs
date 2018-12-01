@@ -108,6 +108,7 @@ public class Enemy : MonoBehaviour {
 		prefabInstance.transform.parent = GameObject.Find("Bullets").transform;
 	}
 	protected void Die(){
+		PlayerManager.Instance.playerScore++;
 		// boom!
 		Instantiate(Boom,transform.position,transform.rotation);
 		// Enemy Dead

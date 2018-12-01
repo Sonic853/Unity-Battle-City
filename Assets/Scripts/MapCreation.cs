@@ -7,7 +7,8 @@ public class MapCreation : MonoBehaviour {
 	public GameObject[] itemList;
 	private List<Vector3> itemPosiList = new List<Vector3>();
 	private int[] EnemyWhere = new int[] {-6,0,6};
-	private bool isCreate=false;
+	private bool Created=true;
+	private float CreatetimeVal;
 
 	private void Awake(){
 		CreateItem(itemList[0],new Vector3(0,-6,0),Quaternion.identity);
@@ -29,10 +30,27 @@ public class MapCreation : MonoBehaviour {
 		}
 		GameObject ThePlayer=Instantiate(itemList[6],new Vector3(-2,-6,0),Quaternion.identity);
 		ThePlayer.GetComponent<Born>().isPlayer = true;
-		CreateItem(itemList[6],new Vector3(-6,6,0),Quaternion.identity);
-		CreateItem(itemList[6],new Vector3(0,6,0),Quaternion.identity);
-		CreateItem(itemList[6],new Vector3(6,6,0),Quaternion.identity);
-		InvokeRepeating("CreateEnemy",4f,1.5f);
+		// CreateItem(itemList[6],new Vector3(-6,6,0),Quaternion.identity);
+		// CreateItem(itemList[6],new Vector3(0,6,0),Quaternion.identity);
+		// CreateItem(itemList[6],new Vector3(6,6,0),Quaternion.identity);
+	}
+	private void Update(){
+		if((GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Born").Length)<4){
+			if(CreatetimeVal<=0){
+				Created = false;
+			}
+			if(!Created){
+				Created = true;
+				Invoke("CreateEnemy",0.8f);
+				CreatetimeVal = 0.9f;
+			}
+		}else if((GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Born").Length)>=4){
+			Created = false;
+		}
+		if(CreatetimeVal>0){
+			CreatetimeVal -= Time.deltaTime;
+		}
+		
 	}
 
 	private void CreateItem(GameObject createCOBJ,Vector3 createPosi,Quaternion createRota){
@@ -60,8 +78,6 @@ public class MapCreation : MonoBehaviour {
 	}
 
 	private void CreateEnemy(){
-		if((GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Born").Length)<4){
-			CreateItem(itemList[6],new Vector3(EnemyWhere[Random.Range(0,EnemyWhere.Length)],6,0),Quaternion.identity);
-		}
+		CreateItem(itemList[6],new Vector3(EnemyWhere[Random.Range(0,EnemyWhere.Length)],6,0),Quaternion.identity);
 	}
 }

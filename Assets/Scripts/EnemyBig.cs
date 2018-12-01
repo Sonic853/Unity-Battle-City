@@ -24,6 +24,7 @@ public class EnemyBig : Enemy {
 			TankHP-=1;
 			Change();
 		}else{
+			PlayerManager.Instance.playerScore++;
 			// boom!
 			Instantiate(Boom,transform.position,transform.rotation);
 			// Enemy Dead

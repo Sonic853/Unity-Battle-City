@@ -97,6 +97,7 @@ public class Player : MonoBehaviour {
 		if(isDefended){
 			return;
 		}
+		PlayerManager.Instance.isDead=true;
 		// boom!
 		Instantiate(Boom,transform.position,transform.rotation);
 		// You Dead

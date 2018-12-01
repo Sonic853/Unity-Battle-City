@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour {
 	public bool isPlayerBullect = true;
 	public bool isPlayer2Bullect = false;
 	public GameObject Explode1;
+	private bool isDestroy = false;
 	// Use this for initialization
 	void Start () {
 		
@@ -21,24 +22,36 @@ public class bullet : MonoBehaviour {
 		switch (collision.tag){
 			case "Tank":
 				if(!isPlayerBullect){
-					collision.SendMessage("Die");
-					Destroy(gameObject);
+					if(!isDestroy){
+						isDestroy = true;
+						collision.SendMessage("Die");
+						Destroy(gameObject);
+					}
 				}
 				break;
 			case "Heart":
-				collision.SendMessage("Die");
-				Destroy(gameObject);
-				break;
-			case "Enemy":
-				if(isPlayerBullect||isPlayer2Bullect){
+				if(!isDestroy){
+					isDestroy = true;
 					collision.SendMessage("Die");
 					Destroy(gameObject);
 				}
 				break;
+			case "Enemy":
+				if(isPlayerBullect||isPlayer2Bullect){
+					if(!isDestroy){
+						isDestroy = true;
+						collision.SendMessage("Die");
+						Destroy(gameObject);
+					}
+				}
+				break;
 			case "Wall":
-				Destroy(collision.gameObject);
-				Instantiate(Explode1,transform.position,transform.rotation);
-				Destroy(gameObject);
+				if(!isDestroy){
+					isDestroy = true;
+					Destroy(collision.gameObject);
+					Instantiate(Explode1,transform.position,transform.rotation);
+					Destroy(gameObject);
+				}
 				break;
 			case "Barriar":
 				Instantiate(Explode1,transform.position,transform.rotation);
