@@ -22,6 +22,7 @@ public class Heart : MonoBehaviour {
 		if (sr.sprite != BrokenSprite){
 			sr.sprite = BrokenSprite;
 			Instantiate(Explode2,transform.position,transform.rotation);
+			PlayerManager.Instance.isDefeat = true;
 		}
 	}
 }

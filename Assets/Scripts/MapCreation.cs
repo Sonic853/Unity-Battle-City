@@ -25,7 +25,7 @@ public class MapCreation : MonoBehaviour {
 			CreateItem(itemList[5],new Vector3(7,i,0),Quaternion.identity);
 			CreateItem(itemList[5],new Vector3(-7,i,0),Quaternion.identity);
 		}
-		for(int i=0;i<50;i++){
+		for(int i=0;i<60;i++){
 			CreateItem(itemList[Random.Range(1,5)],CreateRandomPosi(),Quaternion.identity);
 		}
 		GameObject ThePlayer=Instantiate(itemList[6],new Vector3(-2,-6,0),Quaternion.identity);
@@ -50,7 +50,6 @@ public class MapCreation : MonoBehaviour {
 		if(CreatetimeVal>0){
 			CreatetimeVal -= Time.deltaTime;
 		}
-		
 	}
 
 	private void CreateItem(GameObject createCOBJ,Vector3 createPosi,Quaternion createRota){
@@ -61,7 +60,7 @@ public class MapCreation : MonoBehaviour {
 
 	private Vector3 CreateRandomPosi(){
 		while(true){
-			Vector3 createPosi=new Vector3(Random.Range(-5,6),Random.Range(-5,6),0);
+			Vector3 createPosi=new Vector3(Random.Range(-6,7),Random.Range(-5,6),0);
 			if(!HasThePosi(createPosi)){
 				return createPosi;
 			}

@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour {
 
 	// 属性
-	public int lifeValue = 3;
+	public int lifeValue = 2;
 	public int playerScore = 0;
 	public bool isDead = false;
-	public bool isDefeat;
+	public bool isDefeat = false;
 	// 引用
 	public GameObject born;
+	public Text playerScoreText;
+	public Text playerLifeValueText;
+	public GameObject GameOverUI;
 
 	// 单例
 	private static PlayerManager instance;
@@ -35,15 +39,32 @@ public class PlayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if(isDefeat){
+			return;
+		}
 		if(isDead){
-			isDead=false;
+			isDead = false;
 			Invoke("Recover",0.6f);
+		}
+		playerScoreText.text = playerScore.ToString();
+		playerLifeValueText.text = lifeValue.ToString();
+	}
+
+	void FixedUpdate(){
+		if(isDefeat){
+			if(GameOverUI.transform.position.y<0){
+				GameOverUI.transform.Translate(Vector3.up*3*Time.fixedDeltaTime,Space.World);
+			}else{
+				return;
+			}
 		}
 	}
 
 	private void Recover(){
-		if(lifeValue<=0){
+		int hp = lifeValue;
+		if(--hp<0){
 			// game fail
+			isDefeat = true;
 		}else{
 			lifeValue--;
 			GameObject go=Instantiate(born,new Vector3(-2,-6,0),Quaternion.identity);

@@ -1,13 +1,17 @@
 fileFormatVersion: 2
-guid: b7522ab025b08e14a83b243bd6505ae9
+guid: 69a7d4d60f8c67b49a61595580160da7
 TextureImporter:
   fileIDToRecycleName:
-    21300000: misc_0
-    21300002: misc_1
-    21300004: misc_2
-    21300006: misc_3
-    21300008: misc_4
-    21300010: misc_5
+    21300000: UIGameOver
+    21300002: UIFlag
+    21300004: UIView_1
+    21300006: UIView_2
+    21300008: UIView_P
+    21300010: UIView_I
+    21300012: UIView_Enemy
+    21300014: UIView_Player
+    21300016: UIView_II
+    21300018: UIView_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -108,136 +112,205 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: misc_0
+      name: UIGameOver
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 14
-        height: 14
+        width: 62
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35b6b110e50b6ce4ea8c054cab3d9cdf
+      spriteID: 5aba4bb4314165d45a3c3df844c978a8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: misc_1
+      name: UIFlag
       rect:
         serializedVersion: 2
-        x: 14
-        y: 0
-        width: 14
-        height: 14
+        x: 0
+        y: 30
+        width: 32
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3cfba52d599302648bd8a7a93e9f45ce
+      spriteID: 87b18dfdce9fdcd468fade1b16ef5663
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: misc_2
+      name: UIView_1
       rect:
         serializedVersion: 2
-        x: 28
-        y: 0
+        x: 60
+        y: 46
         width: 14
         height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7ef1599597d371429e30f5c8229ba14
+      spriteID: 107779092e4fc4f4291362ca34378388
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: misc_3
+      name: UIView_2
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
+        x: 40
+        y: 30
         width: 14
         height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bee5eebde7e43740b4026ba308229fc
+      spriteID: 1330b66caf161d14888080b9c2386e26
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: misc_4
+      name: UIView_P
       rect:
         serializedVersion: 2
-        x: 56
-        y: 0
+        x: 54
+        y: 30
         width: 14
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f840928e6e6834d4680f385122204e2a
+      spriteID: 46fff2a03a62cbc41943c2f56e370aaf
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: misc_5
+      name: UIView_I
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 14
+        x: 32
+        y: 30
+        width: 8
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99cb8307f684064496992151eb1676a
+      spriteID: d5b38a1a51d435942a89bd1f2aab8907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIView_Enemy
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 46
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebbcf5ce1eccc04b8c29ef25cac81e4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIView_Player
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 44
+        width: 14
+        height: 16
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a68e47897829fe43a4e5767b89b0a85
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIView_II
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 16
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5145c8614906c541b769a4e5cfbd902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIView_0
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2
+        width: 14
+        height: 14
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9f7d0f37e71554b9203880dba87c5a
       vertices: []
       indices: 
       edges: []
@@ -245,7 +318,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 953fab9099db0f54cb30cf2f09bdf4ae
     vertices: []
     indices: 
     edges: []
