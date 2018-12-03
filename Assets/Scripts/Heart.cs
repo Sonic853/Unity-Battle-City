@@ -7,6 +7,7 @@ public class Heart : MonoBehaviour {
 	private SpriteRenderer sr;
 	public Sprite BrokenSprite;
 	public GameObject Explode2;
+	public AudioClip DieAudio;
 
 	// Use this for initialization
 	void Start () {
@@ -23,6 +24,7 @@ public class Heart : MonoBehaviour {
 			sr.sprite = BrokenSprite;
 			Instantiate(Explode2,transform.position,transform.rotation);
 			PlayerManager.Instance.isDefeat = true;
+			AudioSource.PlayClipAtPoint(DieAudio,transform.position);
 		}
 	}
 }

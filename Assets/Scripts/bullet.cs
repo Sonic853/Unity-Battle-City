@@ -9,6 +9,8 @@ public class bullet : MonoBehaviour {
 	public bool isPlayer2Bullect = false;
 	public GameObject Explode1;
 	private bool isDestroy = false;
+	public AudioClip DestroyAudio;
+	public AudioClip DestroyWallAudio;
 	// Use this for initialization
 	void Start () {
 		
@@ -50,12 +52,17 @@ public class bullet : MonoBehaviour {
 					isDestroy = true;
 					Destroy(collision.gameObject);
 					Instantiate(Explode1,transform.position,transform.rotation);
+					if(isPlayerBullect||isPlayer2Bullect)AudioSource.PlayClipAtPoint(DestroyWallAudio,transform.position);
 					Destroy(gameObject);
 				}
 				break;
 			case "Barriar":
-				Instantiate(Explode1,transform.position,transform.rotation);
-				Destroy(gameObject);
+				if(!isDestroy){
+					isDestroy = true;
+					Instantiate(Explode1,transform.position,transform.rotation);
+					if(isPlayerBullect||isPlayer2Bullect)AudioSource.PlayClipAtPoint(DestroyAudio,transform.position);
+					Destroy(gameObject);
+				}
 				break;
 			case "Bullet":
 				if(this.tag != collision.tag){

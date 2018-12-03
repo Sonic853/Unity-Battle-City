@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BrokenSprite: {fileID: 21300012, guid: bf1f9f82645e6d54ab545376a2560dcb, type: 3}
   Explode2: {fileID: 1366418860820286, guid: debc4f71695da4b40961d8a1070af2df, type: 2}
+  DieAudio: {fileID: 8300000, guid: 067773ca2107b704086c01b238c09aea, type: 3}
 --- !u!212 &212706836481249014
 SpriteRenderer:
   m_ObjectHideFlags: 1

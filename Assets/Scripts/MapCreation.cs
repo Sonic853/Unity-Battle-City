@@ -11,6 +11,10 @@ public class MapCreation : MonoBehaviour {
 	private float CreatetimeVal;
 
 	private void Awake(){
+		InitMap();
+	}
+
+	private void InitMap(){
 		CreateItem(itemList[0],new Vector3(0,-6,0),Quaternion.identity);
 		CreateItem(itemList[1],new Vector3(-1,-6,0),Quaternion.identity);
 		CreateItem(itemList[1],new Vector3(1,-6,0),Quaternion.identity);
@@ -30,10 +34,8 @@ public class MapCreation : MonoBehaviour {
 		}
 		GameObject ThePlayer=Instantiate(itemList[6],new Vector3(-2,-6,0),Quaternion.identity);
 		ThePlayer.GetComponent<Born>().isPlayer = true;
-		// CreateItem(itemList[6],new Vector3(-6,6,0),Quaternion.identity);
-		// CreateItem(itemList[6],new Vector3(0,6,0),Quaternion.identity);
-		// CreateItem(itemList[6],new Vector3(6,6,0),Quaternion.identity);
 	}
+
 	private void Update(){
 		if((GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Born").Length)<4){
 			if(CreatetimeVal<=0){
@@ -47,9 +49,7 @@ public class MapCreation : MonoBehaviour {
 		}else if((GameObject.FindGameObjectsWithTag("Enemy").Length + GameObject.FindGameObjectsWithTag("Born").Length)>=4){
 			Created = false;
 		}
-		if(CreatetimeVal>0){
-			CreatetimeVal -= Time.deltaTime;
-		}
+		if(CreatetimeVal>0)CreatetimeVal -= Time.deltaTime;
 	}
 
 	private void CreateItem(GameObject createCOBJ,Vector3 createPosi,Quaternion createRota){
@@ -61,17 +61,13 @@ public class MapCreation : MonoBehaviour {
 	private Vector3 CreateRandomPosi(){
 		while(true){
 			Vector3 createPosi=new Vector3(Random.Range(-6,7),Random.Range(-5,6),0);
-			if(!HasThePosi(createPosi)){
-				return createPosi;
-			}
+			if(!HasThePosi(createPosi))return createPosi;
 		}
 	}
 
 	private bool HasThePosi(Vector3 createPosi){
 		for(int i=0;i<itemPosiList.Count;i++){
-			if(createPosi==itemPosiList[i]){
-				return true;
-			}
+			if(createPosi==itemPosiList[i])return true;
 		}
 		return false;
 	}

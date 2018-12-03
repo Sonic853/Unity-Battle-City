@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	public int[] moveWhereList = new int[] {0,1,1,1,2,2,3,3,3,4,4,4,4};
 	public int moveWhere=0;
 	public float attackTime=0;
+	public AudioClip DieAudio;
 
 
 
@@ -111,6 +112,7 @@ public class Enemy : MonoBehaviour {
 		PlayerManager.Instance.playerScore++;
 		// boom!
 		Instantiate(Boom,transform.position,transform.rotation);
+		AudioSource.PlayClipAtPoint(DieAudio,transform.position);
 		// Enemy Dead
 		Destroy(gameObject);
 	}

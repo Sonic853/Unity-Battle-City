@@ -103,6 +103,8 @@ MonoBehaviour:
   isPlayerBullect: 0
   isPlayer2Bullect: 0
   Explode1: {fileID: 1920554499214828, guid: 4cdae48ae48f22a4b94303ed67e5a3af, type: 2}
+  DestroyAudio: {fileID: 8300000, guid: c34159c5ef8fec342a91da26375f7d76, type: 3}
+  DestroyWallAudio: {fileID: 8300000, guid: 6f1f7ec9109eb444c887b9b07612f8da, type: 3}
 --- !u!212 &212494748999747248
 SpriteRenderer:
   m_ObjectHideFlags: 1
